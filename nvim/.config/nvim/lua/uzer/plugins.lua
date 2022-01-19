@@ -36,9 +36,7 @@ return require('packer').startup(function(use)
     
 
     -- TREE for nvim
-    --
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua',
+    use 'kyazdani42/nvim-tree.lua'
     
     -- GIT
     use 'tpope/vim-fugitive'        -- Vim-fugitive   
@@ -58,11 +56,19 @@ return require('packer').startup(function(use)
     -- AUTOCOMPLETION
     use 'hrsh7th/nvim-cmp'                          -- Completion framework 
     use 'hrsh7th/cmp-nvim-lsp'                      -- LSP completion source for nvim-cmp
-    use {'neoclide/coc.nvim', branch = 'release'}   -- conquer of completion
+    use 'hrsh7th/cmp-vsnip'                         -- Snippet completion source for nvim-cmp
+    use 'hrsh7th/vim-vsnip'                         -- Snippet engine
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
+
+
     use 'L3MON4D3/LuaSnip'                          -- snippet engine
     use 'saadparwaiz1/cmp_luasnip'                  -- luasnip completion source for nvim-cmp
     use 'onsails/lspkind-nvim'                      -- adds pictograms to nvim built-in lsp
+    use {'neoclide/coc.nvim', branch = 'release'}   -- conquer of completion
 
+
+    
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

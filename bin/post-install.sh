@@ -13,7 +13,6 @@ nvim --headless +CocCommand java.updateLanguageServer  +q
 
 echo "installing coc-rls..."
 nvim --headless +CocInstall coc-rls +q
-
-
+nvim --headless +CocInstall coc-rust-analyzer +q
 
 echo "Finished successfully"

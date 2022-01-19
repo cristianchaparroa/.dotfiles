@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["tabline.nvim"] = {
     loaded = true,

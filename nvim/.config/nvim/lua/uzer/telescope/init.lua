@@ -1,1 +1,1 @@
-
+require('uzer.telescope.maps')
