@@ -16,11 +16,10 @@ return require('packer').startup(function(use)
     use {'tiagovla/tokyodark.nvim', as = 'tokyodark'}
 
     -- Telescope
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
-    }
-  
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+
     -- Telescope Extensions
     use 'kyazdani42/nvim-web-devicons'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -37,12 +36,9 @@ return require('packer').startup(function(use)
     
 
     -- TREE for nvim
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        }
-    }   
+    --
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua',
     
     -- GIT
     use 'tpope/vim-fugitive'        -- Vim-fugitive   
@@ -56,11 +52,12 @@ return require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter',  run =  ':TSUpdate' }
 
     -- LANGUAGES 
-    use 'fatih/vim-go' -- GO
+    use 'fatih/vim-go'              -- GO
+    use 'simrat39/rust-tools.nvim'  -- to enable features of rust-analyzer, such inlay hints etc...
 
     -- AUTOCOMPLETION
     use 'hrsh7th/nvim-cmp'                          -- Completion framework 
-    use 'hrsh7th/cmp-nvim-lsp'                      -- LSP copletion source for nvim-cmp
+    use 'hrsh7th/cmp-nvim-lsp'                      -- LSP completion source for nvim-cmp
     use {'neoclide/coc.nvim', branch = 'release'}   -- conquer of completion
     use 'L3MON4D3/LuaSnip'                          -- snippet engine
     use 'saadparwaiz1/cmp_luasnip'                  -- luasnip completion source for nvim-cmp
