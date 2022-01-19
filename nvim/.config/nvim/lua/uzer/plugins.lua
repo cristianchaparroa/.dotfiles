@@ -73,6 +73,11 @@ return require('packer').startup(function(use)
   -- http://neovimcraft.com/plugin/kdheepak/tabline.nvim/index.html
   use 'kdheepak/tabline.nvim'
 
+ 
+  -- lsp signature
+  use 'ray-x/lsp_signature.nvim'
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
