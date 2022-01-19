@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
 
     -- LANGUAGE SERVER PROTOCOL
     use 'neovim/nvim-lspconfig'
-
+    use 'ray-x/lsp_signature.nvim'  -- lsp signature
 
     -- Treesitter is a parser generator tool and incremental parsing library.
     use {'nvim-treesitter/nvim-treesitter',  run =  ':TSUpdate' }
@@ -62,7 +62,6 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'                          -- snippet engine
     use 'saadparwaiz1/cmp_luasnip'                  -- luasnip completion source for nvim-cmp
     use 'onsails/lspkind-nvim'                      -- adds pictograms to nvim built-in lsp
-
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
