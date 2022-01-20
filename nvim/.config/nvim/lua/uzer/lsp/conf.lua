@@ -1,6 +1,6 @@
 -- lspconfig
 local nvim_lsp = require('lspconfig')
-local servers = { 'gopls', 'html' , 'jsonls', 'rust_analyzer'}
+local servers = { 'gopls', 'html' , 'jsonls', 'rust_analyzer', 'sumneko_lua'}
 
 local on_attach = function(client, bufnr)
     local function map(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -57,4 +57,3 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
-
