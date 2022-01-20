@@ -1,1 +1,0 @@
-require('uzer.lightline.conf')

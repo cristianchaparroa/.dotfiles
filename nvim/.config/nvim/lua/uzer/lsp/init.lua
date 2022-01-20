@@ -1,1 +1,1 @@
-require('uzer.lsp.settings')
+require('uzer.lsp.conf')
