@@ -24,15 +24,15 @@ map('i', '<expr><S-TAB>', 'pumvisible() ? "<C-p>" : "<C-h>"', EXPR_NOREF_NOERR_T
 map('i', '<silent><expr> <C-space?', 'coc#refresh()', EXPR_NOREF_NOERR_TRUNC)
 
 -- use `[c` and `]c` to navigate diagnostics
-map('n', '<silent> [c', '<Plug>(coc-diagnostics-prev)', EXPR_NOREF_NOERR_TRUNC)
-map('n', '<silent> ]c', '<Plug>(coc-diagnostics-next)', EXPR_NOREF_NOERR_TRUNC)
+-- map('n', '<silent> [c', '<Plug>(coc-diagnostics-prev)', EXPR_NOREF_NOERR_TRUNC)
+-- map('n', '<silent> ]c', '<Plug>(coc-diagnostics-next)', EXPR_NOREF_NOERR_TRUNC)
 
 -- Remap keys for gotos
-map('n', '<silent> gd', '<Plug>(coc-definition)', EXPR_NOREF_NOERR_TRUNC)
-map('n', '<silent> gy', '<Plug>(coc-type-definition)', EXPR_NOREF_NOERR_TRUNC)
+-- map('n', '<silent> gd', '<Plug>(coc-definition)', EXPR_NOREF_NOERR_TRUNC)
+-- map('n', '<silent> gy', '<Plug>(coc-type-definition)', EXPR_NOREF_NOERR_TRUNC)
 
 -- it doesn't works why? 
-map('n', '<silent> gi', '<Plug>(coc-implementation)', EXPR_NOREF_NOERR_TRUNC)
+-- map('n', '<silent> gi', '<Plug>(coc-implementation)', EXPR_NOREF_NOERR_TRUNC)
 map('n', '<silent> gr', '<Plug>(coc-references)', EXPR_NOREF_NOERR_TRUNC)
 
 
