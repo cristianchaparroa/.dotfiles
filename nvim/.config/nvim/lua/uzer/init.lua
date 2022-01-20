@@ -8,7 +8,7 @@ require('uzer.gitsigns')
 require('uzer.ntree')
 require('uzer.lualine')
 require('uzer.tabline')
-
+require('uzer.github-theme')
 
 -- this is the lspconfig but it doesn't allow to 
 -- name it as user.lsp
