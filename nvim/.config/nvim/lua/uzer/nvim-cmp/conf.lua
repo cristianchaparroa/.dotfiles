@@ -1,12 +1,12 @@
 local cmp = require('cmp')
--- local lspkind = require('lspkind')
--- local luasnip = require('luasnip')
 
-local cmp = require'cmp'
+-- Setup Completion
+-- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
 cmp.setup({
   -- Enable LSP snippets
   snippet = {
     expand = function(args)
+        -- You must install `vim-vsnip` if you use the following as-is.
         vim.fn["vsnip#anonymous"](args.body)
     end,
   },
