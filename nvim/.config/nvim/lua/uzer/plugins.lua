@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     -- Dracula theme
     use {'dracula/vim', as = 'dracula'} 
     use {'tiagovla/tokyodark.nvim', as = 'tokyodark'}
+    use 'projekt0n/github-nvim-theme'
 
     -- Telescope
     use 'nvim-lua/popup.nvim'

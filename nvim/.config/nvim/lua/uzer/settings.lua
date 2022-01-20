@@ -21,7 +21,7 @@ vim.opt.spell=true                  -- enable spell check (may need to download 
 -- vim.opt.backupdir=~/.cache/vim -- Directory to store backup files.
 --
 vim.opt.termguicolors = true
-vim.cmd('colorscheme tokyodark')
+vim.cmd('colorscheme github_*')
 vim.cmd('set noswapfile')           --disable creating swap file
 vim.cmd('set mouse=a')
 vim.cmd('set noshowmode')
