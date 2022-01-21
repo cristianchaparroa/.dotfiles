@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
     use 'onsails/lspkind-nvim'                      -- adds pictograms to nvim built-in lsp
     use {'neoclide/coc.nvim', branch = 'release'}   -- conquer of completion
 
-
+    use 'github/copilot.vim'
     
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

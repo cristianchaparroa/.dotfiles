@@ -104,10 +104,20 @@ _G.packer_plugins = {
     path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   dracula = {
     loaded = true,
     path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/dracula",
     url = "https://github.com/dracula/vim"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/cristian/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
