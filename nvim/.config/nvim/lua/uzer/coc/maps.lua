@@ -15,13 +15,13 @@ local EXPR_NOREF_NOERR_TRUNC = { expr = true, noremap = true, silent = true, now
 
 -- Use tab for trigger completion with characters ahead and navigate.
 -- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-map('i', '<silecnt><expr><TAB>', 'check_back_space() ? "<C-n>": "<TAB>"', EXPR_NOREF_NOERR_TRUNC)
-map('i', '<expr><S-TAB>', 'pumvisible() ? "<C-p>" : "<C-h>"', EXPR_NOREF_NOERR_TRUNC)
+-- map('i', '<silecnt><expr><TAB>', 'check_back_space() ? "<C-n>": "<TAB>"', EXPR_NOREF_NOERR_TRUNC)
+-- map('i', '<expr><S-TAB>', 'pumvisible() ? "<C-p>" : "<C-h>"', EXPR_NOREF_NOERR_TRUNC)
 
 
 
 -- Use <c-space> (Ctrl + space bar ) to trigger completion.
-map('i', '<silent><expr> <C-space?', 'coc#refresh()', EXPR_NOREF_NOERR_TRUNC)
+-- map('i', '<silent><expr> <C-space?', 'coc#refresh()', EXPR_NOREF_NOERR_TRUNC)
 
 -- use `[c` and `]c` to navigate diagnostics
 -- map('n', '<silent> [c', '<Plug>(coc-diagnostics-prev)', EXPR_NOREF_NOERR_TRUNC)
