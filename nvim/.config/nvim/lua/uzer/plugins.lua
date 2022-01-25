@@ -30,4 +30,14 @@ return require('packer').startup(function()
     use 'lewis6991/gitsigns.nvim'   -- GitSigns
 
     use 'neovim/nvim-lspconfig'
+
+
+    -- AUTOCOMPLETION
+    use 'hrsh7th/nvim-cmp'          -- Completion framework 
+    use 'hrsh7th/cmp-nvim-lsp'      -- LSP completion source for nvim-cmp
+    use 'hrsh7th/cmp-vsnip'                         -- Snippet completion source for nvim-cmp
+    use 'hrsh7th/vim-vsnip'                         -- Snippet engine
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
+
 end)

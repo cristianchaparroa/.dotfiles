@@ -36,19 +36,14 @@ local on_attach = function(client, bufnr)
     map('n', '<leader>wl',  '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 end
 
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
         on_attach = on_attach,
-   --      capabilities = capabilities,
+        capabilities = capabilities,
     }
 end
 
-
-vim.cmd[[
-    set updatetime=300
-    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]]
