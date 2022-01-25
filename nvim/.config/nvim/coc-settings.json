@@ -1,8 +1,0 @@
-{
-    "java.home": "/Users/cristian/.sdkman/candidates/java/current",
-    "java.trace.server": "verbose",
-    "java.format.enabled": true,
-    "java.import.maven.enabled": true,
-    "java.maven.downloadSources": true,
-    "java.jdt.ls.vmargs": "-javaagent:/Users/cristian/.local/share/lombok/lombok.jar"
-}
