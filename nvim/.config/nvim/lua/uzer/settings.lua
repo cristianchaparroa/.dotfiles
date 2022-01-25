@@ -30,3 +30,5 @@ vim.cmd('set encoding=UTF-8')
 vim.cmd('set backupdir=~/.cache/vim')
 
 vim.cmd('set guioptions+=a')        -- when is select on yank it put in the clipboard
+
+vim.cmd('set cmdheight=3')          -- this is the height of the command prompt window 

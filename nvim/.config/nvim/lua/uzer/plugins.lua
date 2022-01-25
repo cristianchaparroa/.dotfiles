@@ -22,5 +22,10 @@ return require('packer').startup(function()
 
 
     use 'kyazdani42/nvim-tree.lua'
+
+    use 'kdheepak/tabline.nvim'
     use 'nvim-lualine/lualine.nvim'
+
+    use 'tpope/vim-fugitive'        -- Vim-fugitive   
+    use 'lewis6991/gitsigns.nvim'   -- GitSigns
 end)
