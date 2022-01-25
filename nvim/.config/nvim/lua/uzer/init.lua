@@ -15,6 +15,4 @@ require('uzer.github-theme')
 require('uzer.lsp') 
 require('uzer.nvim-cmp')
 
-
-require('uzer.coc')
 require('uzer.rust-tools')
