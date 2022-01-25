@@ -7,6 +7,11 @@ return require('packer').startup(function()
   	-- Packer can manage itself
   	use 'wbthomason/packer.nvim'
 
+
+    use 'projekt0n/github-nvim-theme'
+
+    use 'kyazdani42/nvim-web-devicons'
+
   	-- Post-install/update hook with neovim command
   	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
@@ -14,4 +19,7 @@ return require('packer').startup(function()
 	use 'nvim-lua/popup.nvim'
   	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
+
+
+    use 'kyazdani42/nvim-tree.lua'
 end)
