@@ -39,8 +39,15 @@ function setup_rust() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     rustup component add rls rust-analysis rust-src
     brew install rust-analyzer
+    # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
+
+}
+
+function setup_lua() {
+    brew install lua-language-server
+    # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
 }
 
 setup_java
 setup_rust
-
+setup_lua
