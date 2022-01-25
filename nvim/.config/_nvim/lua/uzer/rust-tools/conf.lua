@@ -64,4 +64,6 @@ local opts = {
 }
 
 require('rust-tools').setup(opts)
+vim.lsp.set_log_level("error")
+
 

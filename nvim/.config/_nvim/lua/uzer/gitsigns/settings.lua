@@ -5,3 +5,4 @@ require('gitsigns').setup {
 		virt_text_pos = 'right_align'
 	}
 }
+
