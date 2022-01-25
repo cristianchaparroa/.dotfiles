@@ -21,7 +21,7 @@ vim.opt.spell=true                  -- enable spell check (may need to download 
 -- vim.opt.backupdir=~/.cache/vim -- Directory to store backup files.
 --
 vim.opt.termguicolors = true
--- vim.cmd('colorscheme github_*')
+vim.cmd('colorscheme tokyodark')
 vim.cmd('set noswapfile')           --disable creating swap file
 vim.cmd('set mouse=a')
 vim.cmd('set noshowmode')
@@ -30,3 +30,4 @@ vim.cmd('set encoding=UTF-8')
 vim.cmd('set backupdir=~/.cache/vim')
 
 vim.cmd('set guioptions+=a')        -- when is select on yank it put in the clipboard
+
