@@ -28,4 +28,6 @@ return require('packer').startup(function()
 
     use 'tpope/vim-fugitive'        -- Vim-fugitive   
     use 'lewis6991/gitsigns.nvim'   -- GitSigns
+
+    use 'neovim/nvim-lspconfig'
 end)
