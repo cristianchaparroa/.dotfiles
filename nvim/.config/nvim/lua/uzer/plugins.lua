@@ -66,10 +66,7 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'                          -- snippet engine
     use 'saadparwaiz1/cmp_luasnip'                  -- luasnip completion source for nvim-cmp
     use 'onsails/lspkind-nvim'                      -- adds pictograms to nvim built-in lsp
-    use {'neoclide/coc.nvim', branch = 'release'}   -- conquer of completion
-
-    use 'github/copilot.vim'
-    
+ 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
