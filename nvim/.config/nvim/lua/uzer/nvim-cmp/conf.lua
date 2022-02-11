@@ -3,6 +3,19 @@ local cmp = require('cmp')
 -- Setup Completion
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
 cmp.setup({
+  
+  window = {
+    documentation = {
+      border = 'rounded',
+      scrollbar = '',
+      -- scrollbar = false,
+    },
+    completion = {
+      border = 'rounded',
+      scrollbar = '',
+      -- scrollbar = false,
+    },
+  },
   -- Enable LSP snippets
   snippet = {
     expand = function(args)
