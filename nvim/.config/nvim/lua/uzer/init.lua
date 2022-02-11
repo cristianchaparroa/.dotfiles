@@ -7,5 +7,7 @@ require('uzer.ntree')
 require('uzer.lualine')
 require('uzer.gitsigns')
 require('uzer.tabline')
+require('uzer.github-theme')
 
 require('uzer.lsp')
+require('uzer.nvim-cmp')
