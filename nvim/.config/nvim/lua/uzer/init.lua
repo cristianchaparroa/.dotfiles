@@ -11,3 +11,4 @@ require('uzer.github-theme')
 
 require('uzer.lsp')
 require('uzer.nvim-cmp')
+

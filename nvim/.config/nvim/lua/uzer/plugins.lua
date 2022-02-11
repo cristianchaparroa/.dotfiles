@@ -26,9 +26,11 @@ return require('packer').startup(function()
     use 'kdheepak/tabline.nvim'
     use 'nvim-lualine/lualine.nvim'
 
+    -- GIT
     use 'tpope/vim-fugitive'        -- Vim-fugitive   
     use 'lewis6991/gitsigns.nvim'   -- GitSigns
 
+    -- LANGUAGE SERVER
     use 'neovim/nvim-lspconfig'
 
 
@@ -40,5 +42,8 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'         -- Snippet engine
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
+
+    -- PROGRAMMING LANGUAGES 
+    use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...
 
 end)
