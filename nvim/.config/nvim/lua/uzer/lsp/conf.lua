@@ -2,7 +2,6 @@
 local nvim_lsp = require('lspconfig')
 local servers = { 
     'gopls', 
-    'rust_analyzer', 
     'sumneko_lua'
 }
 
@@ -47,4 +46,4 @@ for _, lsp in ipairs(servers) do
     }
 end
 
-
+require('rust-tools').setup({ server = { on_attach = on_attach, } })
