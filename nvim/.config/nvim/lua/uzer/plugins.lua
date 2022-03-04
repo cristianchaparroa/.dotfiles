@@ -42,8 +42,10 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'         -- Snippet engine
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
+    use 'glepnir/lspsaga.nvim'
 
     -- PROGRAMMING LANGUAGES 
     use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...
+  
 
 end)
