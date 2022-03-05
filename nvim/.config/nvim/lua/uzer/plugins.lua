@@ -43,6 +43,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
     use 'glepnir/lspsaga.nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     -- PROGRAMMING LANGUAGES 
     use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...

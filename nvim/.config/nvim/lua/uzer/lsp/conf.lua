@@ -1,5 +1,7 @@
 -- lspconfig
 local nvim_lsp = require('lspconfig')
+local signature = require('lsp_signature')
+
 local servers = { 
     'gopls', 
     'sumneko_lua'
@@ -33,6 +35,19 @@ local on_attach = function(client, bufnr)
 
     map('n', '<leader>e',   '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',  opts)
     map('n', '<leader>wl',  '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+
+    -- signature integration
+    signature.on_attach({
+        bind = true,                -- This is mandatory, otherwise border config won't get registered.
+        handler_opts = {
+            border = "rounded"
+        },
+        toggle_key = '<leader>x',   -- close the floating window
+        floating_window = false,    -- show hint in a floating window, set to false for virtual text only mode
+
+    }, bufnr)
+
+    map('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts) -- open  manually  the floating window on signature
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
