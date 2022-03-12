@@ -48,6 +48,21 @@ function setup_lua() {
     # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
 }
 
+function setup_solidity() {
+    brew update
+    brew upgrade
+    brew tap ethereum/ethereum
+    brew install solidity 
+
+    brew install ninja
+    brew install llvm
+    brew link llvm --force
+    cargo install -v solang
+
+}
+
+
 setup_java
-setup_rust
 setup_lua
+setup_rust
+setup_solidity
