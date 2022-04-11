@@ -62,7 +62,7 @@ function setup_solidity() {
 }
 
 
-setup_java
-setup_lua
-setup_rust
+#setup_java
+#setup_lua
+#setup_rust
 setup_solidity
