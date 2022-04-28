@@ -7,4 +7,5 @@ brew install wget
 brew install fd
 brew install ripgrep
 brew install bat 
-brew install neovim
+brew install nvim
+brew install gh
