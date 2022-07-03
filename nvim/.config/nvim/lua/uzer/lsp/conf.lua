@@ -4,7 +4,8 @@ local signature = require('lsp_signature')
 
 local servers = { 
     'gopls', 
-    'sumneko_lua'
+    'sumneko_lua',
+    'pylsp'
 }
 
 local on_attach = function(client, bufnr)
