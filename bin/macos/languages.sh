@@ -48,6 +48,18 @@ function setup_lua() {
     # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
 }
 
+function setup_python() {
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+    python3 get-pip.py 
+
+    pip3 install -U setuptools
+    pip3 install python-lsp-server
+    pip3 install "python-lsp-server[all]"
+
+    rm get-pip.py
+}
+
 setup_java
 setup_rust
 setup_lua
+setup_python
