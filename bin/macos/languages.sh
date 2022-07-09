@@ -45,7 +45,6 @@ function setup_rust() {
 
 function setup_lua() {
     brew install lua-language-server
-    # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
 }
 
 function setup_python() {
@@ -59,7 +58,15 @@ function setup_python() {
     rm get-pip.py
 }
 
+function setup_typescript() {
+    omf install nvm 
+    nvm install latest
+    npm install -g typescript typescript-language-server eslint prettier
+    npm install -g eslint_d
+}
+
 setup_java
 setup_rust
 setup_lua
 setup_python
+setup_typescript
