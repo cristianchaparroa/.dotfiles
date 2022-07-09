@@ -48,5 +48,7 @@ return require('packer').startup(function()
     -- PROGRAMMING LANGUAGES 
     use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...
   
+    use "jose-elias-alvarez/null-ls.nvim"
+    use "jose-elias-alvarez/nvim-lsp-ts-utils"
 
 end)
