@@ -3,8 +3,8 @@
 chmod +x *.bash
 
 # install the core tools
-./core.bash
+./core.sh
 
 
 # install programming languages 
-./languages.bash
+./languages.sh
