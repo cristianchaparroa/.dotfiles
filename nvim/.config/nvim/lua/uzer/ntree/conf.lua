@@ -1,6 +1,6 @@
 local ntree = require('nvim-tree')
 
-ntree.setup{
+ntree.setup({
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -36,7 +36,7 @@ ntree.setup{
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 40,
     height = 30,
     hide_root_folder = false,
     side = 'left',
@@ -51,8 +51,13 @@ ntree.setup{
   trash = {
     cmd = "trash",
     require_confirm = true
+  },
+  actions = {
+    open_file = {
+        resize_window = true
+    }
   }
-}
+})
 
 -- NOTE: 
 -- This is to improve performance on
