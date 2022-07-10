@@ -32,21 +32,32 @@ function setup_java() {
 
     wget https://projectlombok.org/downloads/lombok.jar -O ${LOMBOK_HOME}/lombok.jar
     cd
+
+    echo "# JAVA" >> ~/.config/fish/config.fish
+    echo "set JDTLS_HOME ~/.config/lsp/nvim-jdtls/serverset"
 }   
 
 
 function setup_rust() {
+
+    echo "#RUST" >> ~/.config/fish/config.fish
+
     curl https://sh.rustup.rs -sSf | sh -s -- -y 
     echo "fish_add_path $HOME/.cargo/bin" >> ~/.config/fish/config.fish 
     source ~/.config/fish/config.fish
 
     $HOME/.cargo/bin/rustup component add rls rust-analysis rust-src
     brew install rust-analyzer
-    # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
+
+    echo "fish_add_path /opt/hombrew/Cellar/lua-language-server" >> ~/.config/fish/config.fish
+
 }
 
 function setup_lua() {
     brew install lua-language-server
+    
+    echo "# LUA" >> ~/.config/fish/config.fish
+    echo "fish_add_path /opt/homebrew/Cellar/lua-language-server"
 }
 
 function setup_python() {
@@ -64,9 +75,7 @@ function setup_typescript() {
     omf install nvm 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-    echo -e "function nvm\n bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv\nend" >> ~/.config/fish/config.fish 
-    echo "set -gx NVM_DIR ~/.nvm"
-    echo "nvm use default --silent"
+    echo "set -gx NVM_DIR ~/.nvm" >> ~/.config/fish/config.fish
 
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
