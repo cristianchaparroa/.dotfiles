@@ -36,11 +36,13 @@ function setup_java() {
 
 
 function setup_rust() {
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    rustup component add rls rust-analysis rust-src
+    curl https://sh.rustup.rs -sSf | sh -s -- -y 
+    echo "fish_add_path $HOME/.cargo/bin" >> ~/.config/fish/config.fish 
+    source ~/.config/fish/config.fish
+
+    $HOME/.cargo/bin/rustup component add rls rust-analysis rust-src
     brew install rust-analyzer
     # don't forgive export to PATH this /opt/homebrew/Cellar/rust-analyzer/ 
-
 }
 
 function setup_lua() {
@@ -60,7 +62,16 @@ function setup_python() {
 
 function setup_typescript() {
     omf install nvm 
-    nvm install latest
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+    echo -e "function nvm\n bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv\nend" >> ~/.config/fish/config.fish 
+    echo "set -gx NVM_DIR ~/.nvm"
+    echo "nvm use default --silent"
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    nvm install node
     npm install -g typescript typescript-language-server eslint prettier
     npm install -g eslint_d
 }
