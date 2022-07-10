@@ -39,6 +39,7 @@ function setup_java() {
 
 
 function setup_rust() {
+
     echo "#RUST" >> ~/.config/fish/config.fish
 
     curl https://sh.rustup.rs -sSf | sh -s -- -y 
@@ -49,6 +50,7 @@ function setup_rust() {
     brew install rust-analyzer
 
     echo "fish_add_path /opt/hombrew/Cellar/lua-language-server" >> ~/.config/fish/config.fish
+
 }
 
 function setup_lua() {
@@ -72,6 +74,7 @@ function setup_python() {
 function setup_typescript() {
     omf install nvm 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
     echo "set -gx NVM_DIR ~/.nvm" >> ~/.config/fish/config.fish
 
     export NVM_DIR="$HOME/.nvm"
