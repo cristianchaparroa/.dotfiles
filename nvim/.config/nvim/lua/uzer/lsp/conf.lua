@@ -76,3 +76,7 @@ null_ls.setup({
     },
     on_attach = on_attach
 })
+
+
+-- clangd configuration
+require("clangd_extensions").setup()

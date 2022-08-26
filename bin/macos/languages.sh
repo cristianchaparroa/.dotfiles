@@ -85,8 +85,13 @@ function setup_typescript() {
     npm install -g eslint_d
 }
 
+function setup_cpp() {
+    brew install llvm 
+}
+
 setup_java
 setup_rust
 setup_lua
 setup_python
 setup_typescript
+setup_cpp
