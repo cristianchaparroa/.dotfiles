@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # requirements to compile
-sud apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
+sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen
 
 # get source code
 git clone http://github.com/neovim/neovim
