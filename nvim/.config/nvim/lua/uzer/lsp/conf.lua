@@ -3,10 +3,10 @@ local nvim_lsp = require('lspconfig')
 local signature = require('lsp_signature')
 
 local servers = { 
-    'gopls', 
-    -- 'sumneko_lua',
-    'pylsp',
-    'tsserver'
+    'gopls',    -- Golang
+    'pylsp',    -- Python
+    'tsserver', -- Typescript
+    'solang'    -- Solidity
 }
 
 local on_attach = function(client, bufnr)
