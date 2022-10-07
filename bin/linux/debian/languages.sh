@@ -18,7 +18,9 @@ function install_lua() {
     cd ../..
     ./3rd/luamake/luamake rebuild
 
-   echo "fish_add_path $HOME/src/lsp/lua-language-server/bin/" >> ~/.config/fish/config.fish 
+   echo -e "fish_add_path $HOME/src/lsp/lua-language-server/bin \n" >> ~/.config/fish/config.fish 
+
+   source ~/.config/fish/config.fish
 }
 
 # support for python on LSP Neovim 
