@@ -29,6 +29,11 @@ function install_python() {
 }
 
 
+function install_go() {
+    sudo apt install -y golang
+    go install golang.org/x/tools/gopls@latest
+}
+
 function main() {
     install_lua
     install_python
