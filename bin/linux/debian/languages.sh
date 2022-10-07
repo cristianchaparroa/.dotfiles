@@ -7,7 +7,7 @@
 function install_lua() {
     sudo apt install gcc g++ clang ninja-build -y
     mkdir -p ~/src/lsp
-    cd ~/devel/lsp
+    cd ~/src/lsp
     git clone --depth=1 https://hub.fastgit.xyz/sumneko/lua-language-server
     cd lua-language-server
     git submodule update --init --recursive
