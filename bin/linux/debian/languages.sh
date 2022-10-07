@@ -34,9 +34,28 @@ function install_go() {
     go install golang.org/x/tools/gopls@latest
 }
 
+function install_rust() { 
+    echo "#RUST" >> ~/.config/fish/config.fish
+    curl https://sh.rustup.rs -sSf | sh -s -- -y 
+    echo "fish_add_path $HOME/.cargo/bin" >> ~/.config/fish/config.fish 
+    source ~/.config/fish/config.fish
+
+    $HOME/.cargo/bin/rustup component add rls rust-analysis rust-src
+
+    mkdir -p ~/.local/bin 
+
+    mkdir -p ~/.local/bincurl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+
+    chmod +x ~/.local/bin/rust-analyzer
+    
+    source ~/.config/fish/config.fish
+}
+
 function main() {
     install_lua
     install_python
+    install_go
+    install_rust
 }
 
 main
