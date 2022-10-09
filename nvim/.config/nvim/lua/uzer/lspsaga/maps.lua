@@ -1,10 +1,21 @@
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent=true}
+local silent = {silent = true}
 
-map("n", "gh",      "<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>",                  opts)
-map("n", "K",       "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>",             opts)   -- sgiw giver doc
-map("n", "<C-f>",   "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",     opts)   -- scroll down hover doc or scroll in definition preview
-map("n", "<C-b>",   "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",    opts)   -- scroll up hover doc
--- map("n", "<leader>s",      "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>",       opts)   -- show signature help
-map("n", "mm",      "<cmd>lua require('lspsaga.rename').rename()<CR>", {noremap = true})            -- rename
+
+map("n", "sf",  "<cmd>Lspsaga lsp_finder<CR>",  opts)                       -- finder
+map("n", "sh",  "<cmd>Lspsaga hover_doc<CR>",   opts)                       -- hover doc
+map("n", "sr",  "<cmd>Lspsaga rename<CR>",      silent)                     -- rename
+
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>",    silent)           -- Code action
+map("n", "<A-d>",  "<cmd>Lspsaga open_floaterm<CR>", silent)                -- Float terminal
+map("t", "<A-d>", "[[<C-\\><C-n><cmd>Lspsaga close_floaterm<CR>]]", silent) -- close float term
+
+map("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>",    silent) -- Show line diagnostics
+map("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>",  silent) -- Show cursor diagnostic
+
+
+map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", silent)             -- Diagnostic jump can use `<c-o>` to jump back
+map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", silent)
+
