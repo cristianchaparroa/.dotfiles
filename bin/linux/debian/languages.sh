@@ -76,6 +76,7 @@ function install_solang() {
 
 function install_c() {
     sudo apt install -y clangd
+    pip install cppman
 }
 
 function main() {
