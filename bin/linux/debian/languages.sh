@@ -73,12 +73,18 @@ function install_solang() {
 
 }
 
+
+function install_c() {
+    sudo apt install -y clangd
+}
+
 function main() {
     install_lua
     install_python
     install_go
     install_rust
     install_solang
+    install_c
 }
 
 main

@@ -31,12 +31,12 @@ ntree.setup({
     custom = {}
   },
   git = {
-    enable = true,
+    enable = false,
     ignore = true,
-    timeout = 500,
+    timeout = 100, -- milliseconds
   },
   view = {
-    width = 40,
+    width = 30,
     -- height = 30,
     hide_root_folder = false,
     side = 'left',
@@ -59,8 +59,4 @@ ntree.setup({
   }
 })
 
--- NOTE: 
--- This is to improve performance on
--- fish shell
-vim.cmd('set shell=/bin/dash')
 
