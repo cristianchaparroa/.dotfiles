@@ -51,4 +51,11 @@ return require('packer').startup(function()
     use "jose-elias-alvarez/null-ls.nvim"
     use "jose-elias-alvarez/nvim-lsp-ts-utils"
     use  "p00f/clangd_extensions.nvim"
+    
+    use 'mfussenegger/nvim-dap'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'rcarriga/nvim-dap-ui'
+    use 'mfussenegger/nvim-dap-python'
+    use 'nvim-telescope/telescope-dap.nvim'
+    use 'leoluz/nvim-dap-go'
 end)
