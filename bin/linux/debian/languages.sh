@@ -25,12 +25,12 @@ function install_lua() {
 
 # support for python on LSP Neovim 
 function install_python() {
-    sudo apt install python3-pylsp -y
+    sudo apt install -y python3-pylsp python3-debugpy
 }
 
 
 function install_go() {
-    sudo apt install -y golang
+    sudo apt install -y golang delve
     go install golang.org/x/tools/gopls@latest
 }
 
