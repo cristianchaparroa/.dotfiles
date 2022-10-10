@@ -14,3 +14,5 @@ require('uzer.nvim-cmp')
 require('uzer.lspsaga')
 
 require('uzer.dap')
+
+require('uzer.mark-preview')
