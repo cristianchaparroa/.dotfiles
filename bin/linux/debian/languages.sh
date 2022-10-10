@@ -75,7 +75,7 @@ function install_solang() {
 
 
 function install_c() {
-    sudo apt install -y clangd
+    sudo apt install -y clangd lldb-14 liblldb-dev glibc-source
     pip install cppman
 }
 
