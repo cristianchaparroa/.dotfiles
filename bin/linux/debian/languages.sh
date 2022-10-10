@@ -79,6 +79,15 @@ function install_c() {
     pip install cppman
 }
 
+function install_node() {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    omf install nvm
+    set -gx NVM_DIR $HOME/.nvm
+    export NVM_DIR="$HOME/.nvm"
+    nvm install lts/gallium 
+    npm install -g yarn
+}
+
 function main() {
     install_lua
     install_python

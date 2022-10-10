@@ -51,11 +51,19 @@ return require('packer').startup(function()
     use "jose-elias-alvarez/null-ls.nvim"
     use "jose-elias-alvarez/nvim-lsp-ts-utils"
     use  "p00f/clangd_extensions.nvim"
-    
+   
+    -- DEBUGGING
     use 'mfussenegger/nvim-dap'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'rcarriga/nvim-dap-ui'
     use 'mfussenegger/nvim-dap-python'
     use 'nvim-telescope/telescope-dap.nvim'
     use 'leoluz/nvim-dap-go'
+
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
 end)
