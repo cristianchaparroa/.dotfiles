@@ -7,5 +7,5 @@
 vim.cmd[[
     set updatetime=300
     autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-    autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
-]]
+]]    
+    -- :autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)

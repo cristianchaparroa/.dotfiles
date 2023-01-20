@@ -32,6 +32,9 @@ function install_python() {
 function install_go() {
     sudo apt install -y golang delve
     go install golang.org/x/tools/gopls@latest
+
+    echo  "fish_add_path $HOME/go" >> ~/.config/fish/config.fish 
+    echo  "fish_add_path $HOME/go/bin" >> ~/.config/fish/config.fish
 }
 
 function install_rust() { 

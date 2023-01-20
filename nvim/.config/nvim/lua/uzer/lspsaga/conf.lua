@@ -88,4 +88,4 @@ local options = {
     },
 };
 
-saga.init_lsp_saga(options);
+saga.setup(options);
