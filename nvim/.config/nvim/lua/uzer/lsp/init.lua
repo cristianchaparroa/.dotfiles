@@ -1,2 +1,2 @@
 require('uzer.lsp.conf')
-require('uzer.lsp.settings')
+require('uzer.lsp.options')

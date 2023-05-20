@@ -38,6 +38,9 @@ return require('packer').startup(function()
     -- TODO: point to this branch until the border window will be merged to main
     use {'hrsh7th/nvim-cmp'}          -- Completion framework 
     use 'hrsh7th/cmp-nvim-lsp'      -- LSP completion source for nvim-cmp
+    use 'hrsh7th/cmp-nvim-lua' 
+    use 'hrsh7th/cmp-nvim-lsp-signature-help' 
+
     use 'hrsh7th/cmp-vsnip'         -- Snippet completion source for nvim-cmp
     use 'hrsh7th/vim-vsnip'         -- Snippet engine
     use 'hrsh7th/cmp-path'
