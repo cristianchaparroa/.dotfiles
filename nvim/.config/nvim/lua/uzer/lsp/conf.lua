@@ -67,7 +67,11 @@ end
 require("clangd_extensions").setup()
 
 -- rust configuration
-require('rust-tools').setup({ server = { on_attach = on_attach, } })
+require('rust-tools').setup({ 
+    server = { 
+        on_attach = on_attach, 
+    } 
+})
 
 --  type script configuration
 local null_ls = require("null-ls")
@@ -86,7 +90,7 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require'lspconfig'.sumneko_lua.setup {
+require'lspconfig'.lua_ls.setup {
   on_attach = on_attach,
   settings = {
     Lua = {

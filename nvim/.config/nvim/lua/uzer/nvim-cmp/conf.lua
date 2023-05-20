@@ -3,18 +3,10 @@ local cmp = require('cmp')
 -- Setup Completion
 -- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
 cmp.setup({
-  
+
   window = {
-    documentation = {
-      border = 'rounded',
-      scrollbar = '',
-      -- scrollbar = false,
-    },
-    completion = {
-      border = 'rounded',
-      scrollbar = '',
-      -- scrollbar = false,
-    },
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
   },
   -- Enable LSP snippets
   snippet = {
@@ -42,7 +34,9 @@ cmp.setup({
 
   -- Installed sources
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp', keyword_length =  3 },
+    { name = 'nvim_lsp_signature_help'},
+    { name = 'nvim_lua',  keyword_length = 2},
     { name = 'vsnip' },
     { name = 'path' },
     { name = 'buffer' },
@@ -59,6 +53,19 @@ cmp.setup({
         cmp.config.compare.length,
         cmp.config.compare.order,
     }
+  },
+  formatting = {
+      fields = {'menu', 'abbr', 'kind'},
+      format = function(entry, item)
+          local menu_icon ={
+              nvim_lsp = 'λ',
+              vsnip = '⋗',
+              buffer = 'Ω',
+              path = '🖫',
+          }
+          item.menu = menu_icon[entry.source.name]
+          return item
+      end,
   },
 
 })

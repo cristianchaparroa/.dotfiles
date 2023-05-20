@@ -1,1 +1,1 @@
-require('uzer.gitsigns.settings')
+require('uzer.gitsigns.options')
