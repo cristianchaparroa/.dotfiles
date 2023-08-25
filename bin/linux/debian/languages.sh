@@ -74,7 +74,7 @@ function install_rust() {
 }
 
 function install_solang() {
-    sudo apt -y install build-essential
+    sudo apt -y install build-essential libssl-dev
     #mkdir ~/src/llvm     
     #cd  ~/src/llvm
 
@@ -94,8 +94,11 @@ function install_solang() {
     if [ "$SHELL" == "/bin/bash" ]
     then
         export PATH=$PATH:/usr/bin
-        export PATH=\$PATH:\$HOME/src/llvm/llvm-project/installdir/bin
-        echo "export PATH=\$PATH:\$HOME/src/llvm/llvm-project/installdir/bin" >> ~/.profile
+        export PATH=$PATH:$HOME/src/llvm/llvm-project/installdir/bin
+        export LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir/
+
+        echo "export PATH=\$PATH:\$HOME/src/llvm/llvm-project/installdir/" >> ~/.profile
+        echo "export LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir" >> ~/.profile
     fi
 
     cd ~/src/
@@ -103,7 +106,8 @@ function install_solang() {
     cd solang
 
     PATH=$PATH:/usr/bin $HOME/.cargo/bin/cargo install llvmenv
-    PATH=$PATH:/usr/bin LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir/bin $HOME/.cargo/bin/cargo build --release 
+    $HOME/.cargo/bin/cargo clean -p llvm-sys
+    PATH=$PATH:/usr/bin/  LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir/ $HOME/.cargo/bin/cargo build --release 
 
 }
 
