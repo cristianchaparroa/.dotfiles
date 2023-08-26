@@ -57,58 +57,7 @@ function install_rust() {
     $HOME/.cargo/bin/rustup component add rls rust-analysis rust-src 
     mkdir -p ~/.local/bin 
     mkdir -p ~/.local/bincurl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-
     chmod +x ~/.local/bin/rust-analyzer
-   
-    if [ "$SHELL" == "fish" ]
-    then
-        echo "#RUST" >> ~/.config/fish/config.fish
-        echo "fish_add_path $HOME/.cargo/bin" >> ~/.config/fish/config.fish 
-    fi
-
-    if [ "$SHELL" == "/bin/bash" ]
-    then
-        echo "#RUST" >> ~/.profile
-        echo "export PATH=\$PATH:\$HOME/.cargo/bin" >> ~/.profile
-    fi
-}
-
-function install_solang() {
-    sudo apt -y install build-essential libssl-dev
-    #mkdir ~/src/llvm     
-    #cd  ~/src/llvm
-
-    #git clone --depth 1 --branch solana-rustc/15.0-2022-08-09 https://github.com/solana-labs/llvm-project
-    #cd llvm-project
-
-    # The DLLVM_PARALLEL_COMPILE_JOBS is set to 4 to avoid the compilation process consume the machine resources
-    #cmake -G Ninja -DLLVM_ENABLE_ASSERTIONS=On '-DLLVM_PARALLEL_COMPILE_JOBS=4' '-DLLVM_ENABLE_PROJECTS=clang;lld'  \
-    #    -DLLVM_ENABLE_TERMINFO=Off -DCMAKE_BUILD_TYPE=Release \
-    #    -DCMAKE_INSTALL_PREFIX=installdir -B build llvm
-    #cmake --build build --target install 
-     
-    if [ "$SHELL" == "fish" ]
-    then
-        echo -e "fish_add_path $HOME/src/llvm/llvm-project/installdir/bin/ \n" >> ~/.config/fish/config.fish
-    fi
-    if [ "$SHELL" == "/bin/bash" ]
-    then
-        export PATH=$PATH:/usr/bin
-        export PATH=$PATH:$HOME/src/llvm/llvm-project/installdir/bin
-        export LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir/
-
-        echo "export PATH=\$PATH:\$HOME/src/llvm/llvm-project/installdir/" >> ~/.profile
-        echo "export LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir" >> ~/.profile
-    fi
-
-    cd ~/src/
-    /usr/bin/git clone https://github.com/hyperledger/solang/
-    cd solang
-
-    PATH=$PATH:/usr/bin $HOME/.cargo/bin/cargo install llvmenv
-    $HOME/.cargo/bin/cargo clean -p llvm-sys
-    PATH=$PATH:/usr/bin/  LLVM_SYS_150_PREFIX=$HOME/src/llvm/llvm-project/installdir/ $HOME/.cargo/bin/cargo build --release 
-
 }
 
 function install_c() {
@@ -138,22 +87,13 @@ function install_node() {
 }
 
 function main() {
-    #install_lua
-    #install_python
-    #install_c
-    #install_go
-    #install_rust
+    install_lua
+    install_python
+    install_c
+    install_go
+    install_rust
     install_solang
-    #install_node
-    if [ "$SHELL" == "fish" ]
-    then 
-      source ~/.config/fish/config.fish 
-    fi
-    
-    if [ "$SHELL" == "/bin/bash" ]
-    then
-        source ~/.profile
-    fi
+    install_node
 }
 
 main
