@@ -9,12 +9,13 @@ This repository contains  my dotfiles configurations used on the following syste
 
 ## Nvim
 
+```
+cd .dotfiles
+stow nvim
+```
 
 ### Plugins
 
-#### nvim-tree
 
-Available map configurations
-```
-g? General help
-```
+
+
