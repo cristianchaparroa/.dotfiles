@@ -20,7 +20,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 echo "clean up"
-rm -r neovim/
+rm -r $HOME/.dotfiles/bin/linux/debian/tools/neovim/
 
 echo "sync neovim plugins..."
 nvim --headless +PackerSync +q

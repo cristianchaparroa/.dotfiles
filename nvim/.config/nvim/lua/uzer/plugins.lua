@@ -3,6 +3,19 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 return require('packer').startup(function()
   	-- Packer can manage itself
   	use 'wbthomason/packer.nvim'
@@ -64,7 +77,7 @@ return require('packer').startup(function()
     -- DEBUGGING
     use 'mfussenegger/nvim-dap'
     use 'theHamsta/nvim-dap-virtual-text'
-    use 'rcarriga/nvim-dap-ui'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
     use 'mfussenegger/nvim-dap-python'
     use 'nvim-telescope/telescope-dap.nvim'
     use 'leoluz/nvim-dap-go'
@@ -75,4 +88,9 @@ return require('packer').startup(function()
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+       require('packer').sync()
+    end
 end)
