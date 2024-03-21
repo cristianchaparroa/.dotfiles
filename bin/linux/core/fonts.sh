@@ -1,4 +1,24 @@
 #!/bin/bash
 
-sudo mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+sudo apt-get install -y fonts-powerline
+
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+sudo chmod +x ~/.local/share/fonts 
+sudo chown -R $USER ~/.local/share/fonts
+#select the fonts that you want to download from
+# https://www.nerdfonts.com/font-downloads
+fonts=('DroidSansMono' 'FiraCode' 'FiraMono' 'GeistMono' 'Hack' 'Inconsolata')
+
+echo "$PWD"
+for f in "${fonts[@]}"
+do 
+    wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/$f.zip"
+    unzip -o "$f.zip"
+    rm "$f.zip"
+done   
+
+sudo fc-cache -fv
+
+
+
