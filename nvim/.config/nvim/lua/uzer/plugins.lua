@@ -45,6 +45,7 @@ return require('packer').startup(function()
     use 'kdheepak/tabline.nvim'
     use 'nvim-lualine/lualine.nvim'
 
+    use { "nvim-neotest/nvim-nio" }
     -- GIT
     use 'tpope/vim-fugitive'        -- Vim-fugitive   
     use 'lewis6991/gitsigns.nvim'   -- GitSigns
@@ -68,6 +69,7 @@ return require('packer').startup(function()
     use 'ray-x/lsp_signature.nvim'
 
     -- PROGRAMMING LANGUAGES 
+    use 'jparise/vim-graphql'
     use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...
   
     use "jose-elias-alvarez/null-ls.nvim"
