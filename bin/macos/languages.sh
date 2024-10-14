@@ -90,8 +90,8 @@ function setup_cpp() {
 }
 
 setup_java
-setup_rust
-setup_lua
-setup_python
-setup_typescript
-setup_cpp
+#setup_rust
+#setup_lua
+#setup_python
+#setup_typescript
+#setup_cpp
