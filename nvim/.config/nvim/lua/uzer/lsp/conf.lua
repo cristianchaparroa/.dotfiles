@@ -5,7 +5,7 @@ local signature = require('lsp_signature')
 local servers = { 
     'gopls',    -- Golang
     'pylsp',    -- Python
-    'tsserver', -- Typescript
+    'ts_ls', -- Typescript
     'solang'    -- Solidity
 }
 

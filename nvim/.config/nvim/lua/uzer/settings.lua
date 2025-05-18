@@ -28,7 +28,8 @@ vim.cmd('set signcolumn=number')
 vim.cmd('set encoding=UTF-8')
 vim.cmd('set backupdir=~/.cache/vim')
 
-vim.cmd('set guioptions+=a')        -- when is select on yank it put in the clipboard
+-- Enable clipboard integration for visual selection
+vim.opt.clipboard:append('unnamedplus')  -- Use system clipboard for yanking/putting
 
 vim.cmd('set cmdheight=3')          -- this is the height of the command prompt window 
 vim.cmd('set buftype=""')
