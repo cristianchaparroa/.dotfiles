@@ -72,7 +72,7 @@ return require('packer').startup(function()
     use 'jparise/vim-graphql'
     use 'simrat39/rust-tools.nvim' -- Enable features such as inlay hints...
   
-    use "jose-elias-alvarez/null-ls.nvim"
+    use "nvimtools/none-ls.nvim" -- Successor to null-ls.nvim
     use "jose-elias-alvarez/nvim-lsp-ts-utils"
     use  "p00f/clangd_extensions.nvim"
    

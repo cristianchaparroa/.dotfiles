@@ -5,8 +5,7 @@ local signature = require('lsp_signature')
 local servers = { 
     'gopls',    -- Golang
     'pylsp',    -- Python
-    'ts_ls', -- Typescript
-    'solang'    -- Solidity
+    'solang'    -- Solidity (ts_ls configured separately below)
 }
 
 local on_attach = function(client, bufnr)
@@ -25,17 +24,17 @@ local on_attach = function(client, bufnr)
     map('n', 'ga',      '<cmd>lua vim.lsp.buf.code_action()<CR>',       opts)
     map('n', 'ga',      '<cmd>lua vim.lsp.buf.code_action()<CR>',       opts)
     map('n', 'gW',      '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>',  opts)
-    map('n', 'g[',      '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',  opts)
-    map('n', 'g]',      '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',  opts)
+    map('n', 'g[',      '<cmd>lua vim.diagnostic.goto_prev()<CR>',  opts)
+    map('n', 'g]',      '<cmd>lua vim.diagnostic.goto_next()<CR>',  opts)
 
     map('n', '<leader>wa',  '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',      opts)
     map('n', '<leader>wr',  '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',   opts)
     map('n', '<leader>rn',  '<cmd>lua vim.lsp.buf.rename()<CR>',                    opts)
     map('n', '<leader>ca',  '<cmd>lua vim.lsp.buf.code_action()<CR>',               opts)
-    map('n', '<leader>q',   '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',        opts)
-    map('n', '<leader>f',   '<cmd>lua vim.lsp.buf.formatting()<CR>',                opts)
+    map('n', '<leader>q',   '<cmd>lua vim.diagnostic.setloclist()<CR>',        opts)
+    map('n', '<leader>f',   '<cmd>lua vim.lsp.buf.format()<CR>',                opts)
 
-    map('n', '<leader>e',   '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',  opts)
+    map('n', '<leader>e',   '<cmd>lua vim.diagnostic.open_float()<CR>',  opts)
     map('n', '<leader>wl',  '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
     -- signature integration
@@ -73,13 +72,26 @@ require('rust-tools').setup({
     } 
 })
 
---  type script configuration
+-- TypeScript/JavaScript language server with formatting
+nvim_lsp.ts_ls.setup {
+    on_attach = function(client, bufnr)
+        -- Disable ts_ls formatting if you want to use prettier instead
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+}
+
+-- none-ls configuration for formatting and diagnostics
 local null_ls = require("null-ls")
+
 null_ls.setup({
     sources = {
-        null_ls.builtins.diagnostics.eslint_d,
-        null_ls.builtins.code_actions.eslint_d,
-        null_ls.builtins.formatting.prettier
+        -- Prettier for formatting
+        null_ls.builtins.formatting.prettier.with({
+            filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html", "json", "yaml", "markdown" },
+        }),
     },
     on_attach = on_attach
 })
